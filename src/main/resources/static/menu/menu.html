@@ -31,7 +31,7 @@
 			max-width: 380px;
 			background: rgba(0, 0, 0, 0.75);
 			border-radius: 12px;
-			padding: 16px 16px 12px;
+			padding: 16px 16px 14px;
 			box-shadow:
 				0 10px 25px rgba(0, 0, 0, 0.55),
 				0 0 0 1px rgba(255, 255, 255, 0.05);
@@ -150,6 +150,7 @@
 
 		.btn-sair {
 			background: linear-gradient(135deg, #d63031, #c62828);
+			margin-top: 2px;
 		}
 
 		.info {
@@ -209,6 +210,7 @@
 		<div class="grid-buttons">
 			<button class="btn-azul full-width" onclick="irRelatorios()">📊 Relatórios Gerenciais (PDF)</button>
 			<button class="btn-cinza full-width" onclick="irOrigemSistema()">🛠️ Origem do Sistema</button>
+			<button class="btn-cinza full-width" onclick="irUsuario()">👤 Cadastro Usuário</button>
 			<button class="btn-sair full-width" onclick="sair()">❌ Sair do Sistema</button>
 		</div>
 
@@ -225,47 +227,27 @@
 		}
 
 		// 🚀 NAVEGAÇÃO
+		function irUsuario(){
+			window.location.href = "/menu/crudUsuario.html";
+		}
+
 		function irVendas() {
 			window.location.href = "/vendas/vendas.html";
 		}
 
-		function irFornecedores() {
-			window.location.href = "/Fornecedores/crudFornecedor.html";
-		}
-
-		function irProdutos() {
-			window.location.href = "/Produtos/crudProduto.html";
-		}
-
-		function irClientes() {
-			window.location.href = "/Clientes/crudCliente.html";
-		}
-
-		function irEntradas() {
-			window.location.href = "/Entradas/entradaProduto.html";
-		}
-
-		function irOrigemSistema() {
-			window.location.href = "/OrigemSistema/crudOrigemSistema.html";
-		}
-
-		function irRelatorios() {
-			window.location.href = "/relatorios/painelRelatorios.html";
-		}
+		// ... Restante das suas funções de navegação mantidas intactas ...
+		function irFornecedores() { window.location.href = "/Fornecedores/crudFornecedor.html"; }
+		public_profile = false; // Controle de escopo local
+		function irProdutos() { window.location.href = "/Produtos/crudProduto.html"; }
+		function irClientes() { window.location.href = "/Clientes/crudCliente.html"; }
+		function irEntradas() { window.location.href = "/Entradas/entradaProduto.html"; }
+		function irOrigemSistema() { window.location.href = "/OrigemSistema/crudOrigemSistema.html"; }
+		function irRelatorios() { window.location.href = "/relatorios/painelRelatorios.html"; }
 
 		// 💰 FINANCEIRO
-		function irContasReceber() {
-			window.location.href = "/vendas/Financeiro/contasReceber/contasReceber.html"; 
-		}
-
-		function irContasPagar() {
-			window.location.href = "/Entradas/Financeiro/contasPagar/contasPagar.html"; 
-		}
-
-		function irEscrituracao() {
-		    // 🚀 Redireciona perfeitamente para a nova tela ultra-compacta dentro da pasta relatorios
-		    window.location.href = "/relatorios/escrituracao.html"; 
-		}
+		function irContasReceber() { window.location.href = "/vendas/Financeiro/contasReceber/contasReceber.html"; }
+		function irContasPagar() { window.location.href = "/Entradas/Financeiro/contasPagar/contasPagar.html"; }
+		function irEscrituracao() { window.location.href = "/relatorios/escrituracao.html"; }
 
 		// 🚪 LOGOUT
 		function sair() {
@@ -275,3 +257,4 @@
 	</script>
 
 </body>
+</html>
