@@ -9,7 +9,8 @@ async function logar(event) {
   const API_URL =
     window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
       ? "http://localhost:8080"
-      : "https://material-construcao-production.up.railway.app";
+ 
+      : "https://material-construcao-production-dc9e.up.railway.app";
 
   // Variables Globais de Balcão (Memória Estilo COBOL)
   window.ufOrigemSistemaInstalado = "PR"; // Sincroniza a UF padrão para o cálculo do ICMS interestadual
