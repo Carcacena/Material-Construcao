@@ -1,3 +1,4 @@
+
 async function logar() {
     const login = document.getElementById("login").value;
 	const token = localStorage.getItem("token");
