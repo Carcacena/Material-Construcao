@@ -5,11 +5,15 @@ async function logar(event) {
   const login = document.getElementById("login").value;
   const senha = document.getElementById("senha").value;
 
-  // 🌐 CONFIGURAÇÃO AUTOMÁTICA DA URL (Local ou Railway)
-  let API_URL = window.location.origin;
-  if (API_URL.includes("localhost:") && !API_URL.includes(":8080")) {
-    API_URL = "http://localhost:8080";
-  }
+  // 🌐 CONFIGURAÇÃO INTELIGENTE DA URL DA API (Unificada e sem duplicidade)
+  const API_URL =
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+      ? "http://localhost:8080"
+      : "https://material-construcao-production.up.railway.app";
+
+  // Variables Globais de Balcão (Memória Estilo COBOL)
+  window.ufOrigemSistemaInstalado = "PR"; // Sincroniza a UF padrão para o cálculo do ICMS interestadual
+  window.proximaNotaFiscalPrevista = null;
 
   try {
     const response = await fetch(`${API_URL}/auth/login`, {
@@ -41,7 +45,6 @@ async function logar(event) {
     alert(error.message);
   }
 }
-
 // 🚪 FUNÇÃO DE SAIR
 function sair() {
   localStorage.removeItem("token");
